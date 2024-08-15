@@ -1,4 +1,4 @@
-/* .calculator{
+.calculator{
   margin:auto;
   margin-top:4rem;
   border-radius:25px;
@@ -6,7 +6,7 @@
   height:50rem;
   background-color: rgb(64,64,64);
   box-shadow:  9px 10px 2.5px rgba(0, 0, 0, 0.15);
-} */
+}
 
 body{
   /* background-color: rgb(32,32,32); */
