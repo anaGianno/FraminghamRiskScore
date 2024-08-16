@@ -5,100 +5,111 @@
 
 		<link rel="stylesheet" href = "style.css">
   </head>
-  <body>
+  <body onload = "restart()">
     <div class = "calculator">
-      <div class="rb-container">
-        <p>Male</p>
-        <input type = "radio" id ="rb-male" value="male" name = "gender">
-      </div>
-  
-      <div class="rb-container">
-        <p>Female</p>
-        <input type = "radio" id ="rb-female" value="female" name = "gender">
-      </div>
-  
-      <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-  
-        <div class ="slidenumbercontainer" >
-          <p style = "display:inline;">Age: </p>
-          <p id ="agenumber"></p>
-        </div>
-      </div>
-  
-      <div class="rb-container">
-        <p>Smoker</p>
-        <input type = "radio" id ="rb-smoker" value="smoker" name = "smoking">
-      </div>
-  
-      <div class="rb-container">
-        <p>Non-Smoker</p>
-        <input type = "radio" id ="rb-nonsmoker" value="nonsmoker" name = "smoking">
-      </div>
-  
-      <div class = "select-container">
-        <label for="total-cholesterol">Total cholesterol, mg/dL:</label>
-  
-        <select name="total-cholesterol" id="total-cholesterol">
-          <option value="Under 160">Under 160</option>
-          <option value="160-199">160-199</option>
-          <option value="200-239">200-239</option>
-          <option value="240-279">240-279</option>
-          <option value="280 or higher">280 or higher</option>
-        </select>
-      </div>
-  
-      <div class = "select-container">
-        <label for="hdl-cholesterol">HDL cholesterol, mg/dL:</label>
-  
-        <select name="hdl-cholesterol" id="hdl-cholesterol">
-          <option value="Under 40">Under 40</option>
-          <option value="40-49">40-49</option>
-          <option value="50-59">50-59</option>
-          <option value="60 or higher">60 or higher</option>
-        </select>
-      </div>
-  
-      <label for="blood-pressure">Systolic blood pressure, mm Hg:</label>
-      <div class = "select-container">
-        
-        
+      <div id = "page-one">
         <div class="rb-container">
-          <p>Treated</p>
-          <input type = "radio" id ="rb-treated" value="treated" name = "treat">
+          <p>Male</p>
+          <input type = "radio" id ="rb-male" value="male" name = "gender">
         </div>
     
         <div class="rb-container">
-          <p>Untreated</p>
-          <input type = "radio" id ="rb-untreated" value="untreated" name = "treat">
+          <p>Female</p>
+          <input type = "radio" id ="rb-female" value="female" name = "gender">
         </div>
-
-        <select name="blood-pressure" id="blood-pressure"> 
-          <option value="Under 120">Under 120</option>
-          <option value="120-129">120-129</option>
-          <option value="130-139">130-139</option>
-          <option value="140-159">140-159</option>
-          <option value="140-159">140-159</option>
-          <option value="160 or higher">160 or higher</option>
-        </select>
+    
+        <div class="slidecontainer">
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    
+          <div class ="slidenumbercontainer" >
+            <p style = "display:inline;">Age: </p>
+            <p id ="agenumber"></p>
+          </div>
+        </div>
       </div>
+    
+      <div id = "page-two">
+        <div class = "select-container">
+          <label for="total-cholesterol">Total cholesterol, mg/dL:</label>
+    
+          <select name="total-cholesterol" id="total-cholesterol">
+            <option value="Under 160">Under 160</option>
+            <option value="160-199">160-199</option>
+            <option value="200-239">200-239</option>
+            <option value="240-279">240-279</option>
+            <option value="280 or higher">280 or higher</option>
+          </select>
+        </div>
+    
+        <div class = "select-container">
+          <label for="hdl-cholesterol">HDL cholesterol, mg/dL:</label>
+    
+          <select name="hdl-cholesterol" id="hdl-cholesterol">
+            <option value="Under 40">Under 40</option>
+            <option value="40-49">40-49</option>
+            <option value="50-59">50-59</option>
+            <option value="60 or higher">60 or higher</option>
+          </select>
+        </div>
+      </div>
+
+        
+      <div id = "page-three">
+        <div class="rb-container">
+          <p>Smoker</p>
+          <input type = "radio" id ="rb-smoker" value="smoker" name = "smoking">
+        </div>
+    
+        <div class="rb-container">
+          <p>Non-Smoker</p>
+          <input type = "radio" id ="rb-nonsmoker" value="nonsmoker" name = "smoking">
+        </div>
+      </div>
+
+        
+      <div id = "page-four">
+        <label for="blood-pressure">Systolic blood pressure, mm Hg:</label>
+        <div class = "select-container">
+          
+          
+          <div class="rb-container">
+            <p>Treated</p>
+            <input type = "radio" id ="rb-treated" value="treated" name = "treat">
+          </div>
+      
+          <div class="rb-container">
+            <p>Untreated</p>
+            <input type = "radio" id ="rb-untreated" value="untreated" name = "treat">
+          </div>
   
-  
-      <div class="ans-container">
-        <button type = "calculate" id = "b-calcluate" name = "calculate" onclick = "calculate()">Calculate</button>
-        <p>Output: </p>
+          <select name="blood-pressure" id="blood-pressure"> 
+            <option value="Under 120">Under 120</option>
+            <option value="120-129">120-129</option>
+            <option value="130-139">130-139</option>
+            <option value="140-159">140-159</option>
+            <option value="140-159">140-159</option>
+            <option value="160 or higher">160 or higher</option>
+          </select>
+        </div>
+      </div>
+        
+      <div id = "page-five">
+        <div class="ans-container">
+          <button type = "calculate" id = "b-calcluate" name = "calculate" onclick = "calculate()">Calculate</button>
+          <p>Output: </p>
+        </div>
       </div>
 
       <div class="next-container">
-        <button type = "next" id = "b-next" name = "next">Next</button>
+        <button type = "next" id = "b-next" name = "next" onclick = "next()">Next</button>
       </div>
 
       <div class="restart-container">
-        <button type = "restart" id = "b-restart" name = "restart">Restart</button>
+        <button type = "restart" id = "b-restart" name = "restart" onclick = "restart()">Restart</button>
       </div>
       
       <div class="prev-container">
-        <button type = "prev" id = "b-prev" name = "prev">Previous</button>
+        <button type = "prev" id = "b-prev" name = "prev" onclick = "previous()">Previous</button>
       </div>
 
       <script src = "script.js"></script>
