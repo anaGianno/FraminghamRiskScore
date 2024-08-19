@@ -179,12 +179,18 @@ function calculateRisk(){
     {min:16,max:16,result:"25%"},
     {min:17,max:37,result:"over 30%"}
   ];
+  if($('input[type=radio]:checked').length > 2){
+    let arrayToUse = gender === "female" ? arrayFemale : arrayMale;
+    let totalPoints = agePoints(age,gender) + totalCholesterolPoints(age,gender,totalcholesterol) + smokerPoints(age,gender,smoking)
+    + hdlCholesterolPoints(hdlcholesterol) + bloodPressurePoints(gender,bloodpressure,treat);
+    let answer = arrayToUse.find(({min,max}) => totalPoints >= min && totalPoints <= max)?.result;
+    console.log("With " + totalPoints + " total points, the 10-year risk is " + answer);
+  }
+  else{
+    alert("Not all radio buttons have options selected");
+    restart();
+  }
 
-  let arrayToUse = gender === "female" ? arrayFemale : arrayMale;
-  let totalPoints = agePoints(age,gender) + totalCholesterolPoints(age,gender,totalcholesterol) + smokerPoints(age,gender,smoking)
-  + hdlCholesterolPoints(hdlcholesterol) + bloodPressurePoints(gender,bloodpressure,treat);
-  let answer = arrayToUse.find(({min,max}) => totalPoints >= min && totalPoints <= max)?.result;
-  console.log("With " + totalPoints + " total points, the 10-year risk is " + answer);
 }
 
 function next(){
@@ -203,12 +209,32 @@ function previous(){
 }
 
 function checkPage(){
-  var pageOne = document.getElementById("page-one");
-  var pageTwo = document.getElementById("page-two");
-  var pageThree = document.getElementById("page-three");
-  var pageFour = document.getElementById("page-four");
-  var pageFive = document.getElementById("page-five");
+  var pageOne = document.getElementById("page one");
+  var pageTwo = document.getElementById("page two");
+  var pageThree = document.getElementById("page three");
+  var pageFour = document.getElementById("page four");
+  var pageFive = document.getElementById("page five");
   let pageArray = [pageOne,pageTwo,pageThree,pageFour,pageFive];
+
+  var bPrevious = document.getElementById("b-prev");
+  var bNext = document.getElementById("b-next");
+  var bRestart = document.getElementById("b-restart");
+  if(pagenumber===0){
+    bPrevious.style.display = "none";
+    bRestart.style.display = "none";
+  }
+  else{
+    bPrevious.style.display = "block";
+    bRestart.style.display = "block";
+  }
+
+  if(pagenumber=== 4){
+    bNext.style.display = "none";
+  }
+  else{
+    bNext.style.display = "block";
+  }
+
   for(let i = 0; i<pageArray.length;i++){
     if(i===pagenumber){
       pageArray[i].style.display = "block";
