@@ -184,6 +184,9 @@ function calculateRisk(){
     let totalPoints = agePoints(age,gender) + totalCholesterolPoints(age,gender,totalcholesterol) + smokerPoints(age,gender,smoking)
     + hdlCholesterolPoints(hdlcholesterol) + bloodPressurePoints(gender,bloodpressure,treat);
     let answer = arrayToUse.find(({min,max}) => totalPoints >= min && totalPoints <= max)?.result;
+
+    var output = document.getElementById("output");
+    output.textContent = "Output: With " + totalPoints + " total points, the 10-year risk is " + answer;
     console.log("With " + totalPoints + " total points, the 10-year risk is " + answer);
   }
   else{

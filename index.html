@@ -127,10 +127,15 @@
         <h1 style ="display:block">Systolic blood pressure Input</h1>
 
         <h3 style ="display:block">Please enter input for: </h3>
-        <label for="blood-pressure">Systolic blood pressure, mm Hg:</label>
-        <div class = "select-container">
-          
-          
+        <label for="blood-pressure">Systolic blood pressure, mm Hg:</label><br><br>
+        <select name="blood-pressure" id="blood-pressure"> 
+          <option value="0">Under 120</option>
+          <option value="1">120-129</option>
+          <option value="2">130-139</option>
+          <option value="3">140-159</option>
+          <option value="4">160 or higher</option>
+        </select><br><br>
+        <div class = "select-container">      
           <label class="rb-container">Treated
             <input type = "radio" id ="rb-treated" value="1" name = "treat">
             <span class="checkmark"></span>
@@ -140,14 +145,6 @@
             <input type = "radio" id ="rb-untreated" value="0" name = "treat">
             <span class="checkmark"></span>
           </label>
-  
-          <select name="blood-pressure" id="blood-pressure"> 
-            <option value="0">Under 120</option>
-            <option value="1">120-129</option>
-            <option value="2">130-139</option>
-            <option value="3">140-159</option>
-            <option value="4">160 or higher</option>
-          </select>
         </div>
 
         <h4 style ="display:block">What is the Framingham Risk Score?</h4>
@@ -163,8 +160,8 @@
 
         <h3 style ="display:block">Calculate your score: </h3>
         <div class="ans-container">
-          <button type = "calculate" id = "b-calcluate" name = "calculate" onclick = "calculateRisk()">Calculate</button>
-          <p>Output: </p>
+          <button type = "calculate" id = "b-calcluate" name = "calculate" onclick = "calculateRisk()">Calculate</button><br><br>
+          <p id = "output">Output: </p>
         </div>
 
         <h4 style ="display:block">What is the Framingham Risk Score?</h4>
