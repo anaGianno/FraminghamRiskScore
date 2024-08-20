@@ -19,7 +19,8 @@
   padding-left:1rem;
   padding-right:1rem;
   padding-bottom:1rem;
-  height:50rem;
+  /* responsive height to content */
+  height: fit-content;
   width:50%;
   margin-left:25%;
   margin-right:25%;

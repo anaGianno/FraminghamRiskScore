@@ -211,7 +211,7 @@ function calculateRisk(){
     output.textContent = "Output: With " + totalPoints + " total points, the 10-year risk is " + answer;
   }
   else{
-    alert("Not all radio buttons have options selected");
+    alert("Please fill out all input for final score");
     restart();
   }
 
