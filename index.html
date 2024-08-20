@@ -3,33 +3,43 @@
   <head>
     <title>FraminghamRiskScore</title>
 
+    <!-- import font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
+    <!-- reference stylesheet -->
 		<link rel="stylesheet" href = "style.css">
   </head>
+  <!-- when the page is loaded set page -->
   <body onload="restart()">
+    <!-- header -->
     <div class = "header">
       <p class = "title">Framingham Risk Score</p>
     </div>
 
+    <!-- main content of the page including all pages and navigation -->
     <div class = "calculator">
+      <!-- first page for age/gender input -->
       <div id = "page one" class = "page one">
+        <!-- header information -->
         <h1 style ="display:block">Age/Gender Input</h1>
-
         <h3 style ="display:block">Please enter input for: </h3>
+
+        <!-- gender input for male -->
         <p>Gender: </p><br><br>
         <label class="rb-container">Male
           <input type = "radio" id ="rb-male" value="male" name = "gender">
           <span class="checkmark"></span>
         </label>
     
+        <!-- gender input for female -->
         <label class="rb-container">Female
           <input type = "radio" id ="rb-female" value="female" name = "gender">
           <span class="checkmark"></span>
         </label>
     
+        <!-- age input -->
         <div class="slidecontainer">
           <div class ="slidenumbercontainer">
             <p style = "display:inline">Age: </p>
@@ -39,6 +49,7 @@
           <input type="range" min="20" max="79" value="20" class="slider" id="myRange"  style = "display:inline"><br><br>
         </div>
 
+        <!-- extra information; age points-->
         <h4 style ="display:block">What is the Framingham Risk Score?</h4>
         <p>The Framingham Risk Score is a sex-specific algorithm used to estimate the 10-year cardiovascular risk of an individual. The Framingham Risk Score was first developed based on data obtained from the Framingham Heart Study, to estimate the 10-year risk of developing coronary heart disease. In order to assess the 10-year cardiovascular disease risk, cerebrovascular events, peripheral artery disease and heart failure were subsequently added as disease outcomes for the 2008 Framingham Risk Score, on top of coronary heart disease.</p>
         <h4 style ="display:block">Framingham Risk Score for Women: Age</h4>
@@ -47,13 +58,15 @@
         <p>Age: 20–34 years: Minus 9 points. 35–39 years: Minus 4 points. 40–44 years: 0 points. 45–49 years: 3 points. 50–54 years: 6 points. 55–59 years: 8 points. 60–64 years: 10 points. 65–69 years: 11 points. 70–74 years: 12 points. 75–79 years: 13 points.</p>
       </div>
     
+      <!-- second page for cholesterol input -->
       <div id = "page two" class = "page two">
+        <!-- header information -->
         <h1 style ="display:block">Cholesterol Input</h1>
-
         <h3 style ="display:block">Please enter input for: </h3>
+
+        <!-- total cholesterol input -->
         <div class = "select-container">
           <label for="total-cholesterol">Total cholesterol, mg/dL:</label>
-    
           <select name="total-cholesterol" id="total-cholesterol">
             <option value="0">Under 160</option>
             <option value="1">160-199</option>
@@ -61,12 +74,11 @@
             <option value="3">240-279</option>
             <option value="4">280 or higher</option>
           </select>
-   
         </div>
     
+        <!-- hdl cholesterol input -->
         <div class = "select-container">
           <label for="hdl-cholesterol">HDL cholesterol, mg/dL:</label>
-    
           <select name="hdl-cholesterol" id="hdl-cholesterol">
             <option value="0">Under 40</option>
             <option value="1">40-49</option>
@@ -75,9 +87,11 @@
           </select>
         </div>
 
+        <!-- extra information; cholesterol points -->
         <h4 style ="display:block">What is the Framingham Risk Score?</h4>
         <p>The Framingham Risk Score is a sex-specific algorithm used to estimate the 10-year cardiovascular risk of an individual. The Framingham Risk Score was first developed based on data obtained from the Framingham Heart Study, to estimate the 10-year risk of developing coronary heart disease. In order to assess the 10-year cardiovascular disease risk, cerebrovascular events, peripheral artery disease and heart failure were subsequently added as disease outcomes for the 2008 Framingham Risk Score, on top of coronary heart disease.</p>
         <h4 style ="display:block">Framingham Risk Score for Women: Total and HDL Cholesterol</h4>
+        <!-- total cholesterol points -->
         <ul style ="display:block">Total cholesterol, mg/dL:
           <li style ="display:block">Age 20–39 years: Under 160: 0 points. 160-199: 4 points. 200-239: 8 points. 240-279: 11 points. 280 or higher: 13 points.</li>
           <li style ="display:block">Age 40–49 years: Under 160: 0 points. 160-199: 3 points. 200-239: 6 points. 240-279: 8 points. 280 or higher: 10 points.</li>
@@ -85,6 +99,7 @@
           <li style ="display:block">Age 60–69 years: Under 160: 0 points. 160-199: 1 point. 200-239: 2 points. 240-279: 3 points. 280 or higher: 4 points.</li>
           <li style ="display:block">Age 70–79 years: Under 160: 0 points. 160-199: 1 point. 200-239: 1 point. 240-279: 2 points. 280 or higher: 2 points.</li>
         </ul>
+        <!-- hdl cholesterol points -->
         <p>HDL cholesterol, mg/dL: 60 or higher: Minus 1 point. 50-59: 0 points. 40-49: 1 point. Under 40: 2 points.</p>
         <h4 style ="display:block">Framingham Risk Score for Men: Total and HDL Cholesterol</h4>
         <ul style ="display:block">Total cholesterol, mg/dL:
@@ -97,21 +112,25 @@
         <p>HDL cholesterol, mg/dL: 60 or higher: Minus 1 point. 50-59: 0 points. 40-49: 1 point. Under 40: 2 points.</p>
       </div>
 
-        
+      <!-- third page for smoking input -->
       <div id = "page three" class = "page three">
+        <!-- header information -->
         <h1 style ="display:block">Smoking Input</h1>
-
         <h3 style ="display:block">Please enter input for: </h3>
+
+        <!-- radio button for smoker -->
         <label class="rb-container">Smoker
           <input type = "radio" id ="rb-smoker" value="smoker" name = "smoking">
           <span class="checkmark"></span>
         </label>
     
+        <!-- radio button for non-smoker -->
         <label class="rb-container">Non-Smoker
           <input type = "radio" id ="rb-nonsmoker" value="nonsmoker" name = "smoking">
           <span class="checkmark"></span>
         </label>
 
+        <!-- extra information; smoking points -->
         <h4 style ="display:block">What is the Framingham Risk Score?</h4>
         <p>The Framingham Risk Score is a sex-specific algorithm used to estimate the 10-year cardiovascular risk of an individual. The Framingham Risk Score was first developed based on data obtained from the Framingham Heart Study, to estimate the 10-year risk of developing coronary heart disease. In order to assess the 10-year cardiovascular disease risk, cerebrovascular events, peripheral artery disease and heart failure were subsequently added as disease outcomes for the 2008 Framingham Risk Score, on top of coronary heart disease.</p>
         <h4 style ="display:block">Framingham Risk Score for Women: Smoking</h4>
@@ -122,11 +141,13 @@
         <p>All non smokers: 0 points.</p>
       </div>
 
-        
+      <!-- fourth page for blood pressure -->
       <div id = "page four" class = "page four">
+        <!-- header information -->
         <h1 style ="display:block">Systolic blood pressure Input</h1>
-
         <h3 style ="display:block">Please enter input for: </h3>
+
+        <!-- blood pressure input -->
         <label for="blood-pressure">Systolic blood pressure, mm Hg:</label><br><br>
         <select name="blood-pressure" id="blood-pressure"> 
           <option value="0">Under 120</option>
@@ -135,6 +156,8 @@
           <option value="3">140-159</option>
           <option value="4">160 or higher</option>
         </select><br><br>
+
+        <!-- treated/untreated input -->
         <div class = "select-container">      
           <label class="rb-container">Treated
             <input type = "radio" id ="rb-treated" value="1" name = "treat">
@@ -147,6 +170,7 @@
           </label>
         </div>
 
+        <!-- extra information; blood pressure points -->
         <h4 style ="display:block">What is the Framingham Risk Score?</h4>
         <p>The Framingham Risk Score is a sex-specific algorithm used to estimate the 10-year cardiovascular risk of an individual. The Framingham Risk Score was first developed based on data obtained from the Framingham Heart Study, to estimate the 10-year risk of developing coronary heart disease. In order to assess the 10-year cardiovascular disease risk, cerebrovascular events, peripheral artery disease and heart failure were subsequently added as disease outcomes for the 2008 Framingham Risk Score, on top of coronary heart disease.</p>
         <h4 style ="display:block">Framingham Risk Score for Women: Systolic blood pressure</h4>
@@ -155,15 +179,19 @@
         <p>Systolic blood pressure, mm Hg: Untreated: Under 120: 0 points. 120-129: 0 points. 130-139: 1 point. 140-159: 1 point. 160 or higher: 2 points. • Treated: Under 120: 0 points. 120-129: 1 point. 130-139: 2 points. 140-159: 2 points. 160 or higher: 3 points.</p>
       </div>
         
+      <!-- fifth page to calculate the final score -->
       <div id = "page five" class = "page five">
+        <!-- header information -->
         <h1 style ="display:block">Final Risk Score Output</h1>
-
         <h3 style ="display:block">Calculate your score: </h3>
+
+        <!-- button to calculate and output final score -->
         <div class="ans-container">
           <button type = "calculate" id = "b-calcluate" name = "calculate" onclick = "calculateRisk()">Calculate</button><br><br>
           <p id = "output">Output: </p>
         </div>
 
+        <!-- extra information: 10 year risk percentages -->
         <h4 style ="display:block">What is the Framingham Risk Score?</h4>
         <p>The Framingham Risk Score is a sex-specific algorithm used to estimate the 10-year cardiovascular risk of an individual. The Framingham Risk Score was first developed based on data obtained from the Framingham Heart Study, to estimate the 10-year risk of developing coronary heart disease. In order to assess the 10-year cardiovascular disease risk, cerebrovascular events, peripheral artery disease and heart failure were subsequently added as disease outcomes for the 2008 Framingham Risk Score, on top of coronary heart disease.</p>
         <h4 style ="display:block">Framingham Risk Score for Women: 10 Year Risk Percentage</h4>
@@ -172,6 +200,7 @@
         <p>10-year risk in %: Points total: 0 point: <1%. 1-4 points: 1%. 5-6 points: 2%. 7 points: 3%. 8 points: 4%. 9 points: 5%. 10 points: 6%. 11 points: 8%. 12 points: 10%. 13 points: 12%. 14 points: 16%. 15 points: 20%. 16 points: 25%. 17 points or more: Over 30%.</p>
       </div>
 
+      <!-- row of buttons to navigate through the pages -->
       <div class ="button-row">
         <div class="prev-container">
           <button type = "prev" id = "b-prev" name = "prev" onclick = "previous()">Previous</button>
@@ -188,7 +217,9 @@
 
     </div>
 
+    <!-- import jquery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <!-- reference script -->
     <script src = "script.js"></script>
   </body>
 </html>
