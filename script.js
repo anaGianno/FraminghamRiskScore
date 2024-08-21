@@ -206,15 +206,20 @@ function calculateRisk(){
     + hdlCholesterolPoints(hdlcholesterol) + bloodPressurePoints(gender,bloodpressure,treat);
     let answer = arrayToUse.find(({min,max}) => totalPoints >= min && totalPoints <= max)?.result;
 
+    console.log("age: " + agePoints(age,gender));
+    console.log("total chol: " + totalCholesterolPoints(age,gender,totalcholesterol));
+    console.log("smoker: " + smokerPoints(age,gender,smoking));
+    console.log("hdl: " + hdlCholesterolPoints(hdlcholesterol));
+    console.log("blood pressure: " + bloodPressurePoints(gender,bloodpressure,treat));
+
     // display final score on the page
     var output = document.getElementById("output");
     output.textContent = "Output: With " + totalPoints + " total points, the 10-year risk is " + answer;
   }
   else{
-    alert("Please fill out all input for final score");
+    alert("Please fill out all input to calculate the final score");
     restart();
   }
-
 }
 
 let pageNumber = 0;
